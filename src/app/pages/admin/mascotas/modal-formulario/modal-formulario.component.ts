@@ -70,10 +70,13 @@ export class ModalFormularioComponent implements OnInit, OnDestroy {
       this.MascotasSvc.new(rest)
       .pipe(takeUntil(this.destroy$))
       .subscribe(result => {
+        if (result){
+        
         this._snackBar.open(result.message, '', {
           duration: 6000
         });
         this.dialogRef.close(true);
+      }
       });
     } else {
       // Update
@@ -81,10 +84,12 @@ export class ModalFormularioComponent implements OnInit, OnDestroy {
       this.MascotasSvc.update(rest)
       .pipe(takeUntil(this.destroy$))
       .subscribe(result => {
+        if (result) {
         this._snackBar.open(result.message, '', {
           duration: 6000
         });
         this.dialogRef.close(true);  
+      }
       });
     }
 

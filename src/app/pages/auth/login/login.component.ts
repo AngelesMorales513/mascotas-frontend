@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       } else if(campo.errors?.email){
         message = "El formato no es correcto";
       } else if(campo.errors?.minlength){
-        message = "Los caracteres minimos son 4";
+        message = "Longitud minima de 4";
       }
     }
     return message;
