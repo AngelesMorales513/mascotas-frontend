@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate } from '@angular/router';
+import { AuthService } from '@app/pages/auth/auth.service';
 import { Observable } from 'rxjs';
+import { take , map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckLoginGuard implements CanActivate {
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+  constructor(private authSvc: AuthService) {}
+  canActivate(): Observable<boolean>{
+    return this.authSvc.isLogged.pipe(
+      take(1),
+      map((isLogged: boolean) => !isLogged)
+    );
   }
-  
+
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { ModalFormularioComponent } from './mascotas/modal-formulario/modal-formulario.component';
+import { MaterialModule } from '@app/material.modules';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ModalFormularioComponent } from './mascotas/modal-formulario/modal-form
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MaterialModule
   ]
 })
 export class AdminModule { }

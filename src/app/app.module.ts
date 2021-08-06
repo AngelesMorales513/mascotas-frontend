@@ -9,6 +9,10 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { DialogoConfirmacionComponent } from './shared/component/dialogo-confirmacion/dialogo-confirmacion.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UtilsService } from './shared/services/util.service';
+import { AdminInterceptor } from './shared/interceptors/admin-interceptor';
+import { MaterialModule } from './material.modules';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,14 @@ import { DialogoConfirmacionComponent } from './shared/component/dialogo-confirm
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SidebarModule
+    SidebarModule,
+    HttpClientModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [
+    UtilsService,
+    {provide: HTTP_INTERCEPTORS, useClass: AdminInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
