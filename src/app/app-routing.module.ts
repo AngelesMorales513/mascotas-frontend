@@ -16,8 +16,8 @@ const routes: Routes = [
 },
 {
   path: '',
-  loadChildren: () => import('./pages/auth/login/login.module').then(m => m.LoginModule), canActivate: [CheckLoginGuard]
-}
+  loadChildren: () => import('./pages/auth/login/login.module').then(m => m.LoginModule), canActivate: [CheckLoginGuard] }
+
 ];
 
 @NgModule({

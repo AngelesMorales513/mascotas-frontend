@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MascotasRoutingModule } from './mascotas-routing.module';
 import { MascotasComponent } from './mascotas.component';
+import { MaterialModule } from '@app/material.modules';
 
 
 @NgModule({
@@ -10,8 +11,8 @@ import { MascotasComponent } from './mascotas.component';
     MascotasComponent
   ],
   imports: [
-    CommonModule,
-    MascotasRoutingModule
+    MascotasRoutingModule,
+    MaterialModule
   ]
 })
 export class MascotasModule { }
