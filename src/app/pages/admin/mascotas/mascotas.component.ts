@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MascotasService } from '../services/mascotas.service';
 import { ModalFormularioComponent } from './modal-formulario/modal-formulario.component';
+import { AuthService } from '@app/pages/auth/auth.service';
 
 @Component({
   selector: 'app-mascotas',
@@ -26,13 +27,15 @@ export class MascotasComponent implements OnInit, OnDestroy {
   ];
   lstUsers: UserResponse[] = [];
 
-  constructor(private mascotasSvc: MascotasService, private dialog: MatDialog, private _snackbar: MatSnackBar) { }
+  constructor(private mascotasSvc: MascotasService, private dialog: MatDialog, private _snackbar: MatSnackBar, private authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.listMascotas();
   }
+
   private listMascotas(): void {
-    this.mascotasSvc.lista()
+    const result = this.authSvc.userValue?.username!;
+    this.mascotasSvc.lista(result)
     .pipe(takeUntil(this.destroy$))
     .subscribe(users => this.lstUsers = users);
   }
