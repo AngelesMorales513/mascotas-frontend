@@ -43,7 +43,7 @@ export class MascotasComponent implements OnInit, OnDestroy {
   onOpenModal(user = {}): void {
     const dialogRef = this.dialog.open(ModalFormularioComponent, {
       disableClose: true,
-      data: {title: 'Nuevo usuario', user}
+      data: {title: 'Nueva mascota', user}
     });
     dialogRef.afterClosed()
     .pipe(takeUntil(this.destroy$))
