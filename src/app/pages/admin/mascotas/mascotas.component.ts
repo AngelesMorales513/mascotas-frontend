@@ -8,7 +8,7 @@ import { takeUntil } from 'rxjs/operators';
 import { MascotasService } from '../services/mascotas.service';
 import { ModalFormularioComponent } from './modal-formulario/modal-formulario.component';
 import { AuthService } from '@app/pages/auth/auth.service';
-
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-mascotas',
   templateUrl: './mascotas.component.html',

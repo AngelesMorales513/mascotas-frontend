@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { MascotasRoutingModule } from './mascotas-routing.module';
 import { MascotasComponent } from './mascotas.component';
 import { MaterialModule } from '@app/material.modules';
@@ -12,7 +11,8 @@ import { MaterialModule } from '@app/material.modules';
   ],
   imports: [
     MascotasRoutingModule,
-    MaterialModule
+    MaterialModule, 
+    ReactiveFormsModule
   ]
 })
 export class MascotasModule { }
