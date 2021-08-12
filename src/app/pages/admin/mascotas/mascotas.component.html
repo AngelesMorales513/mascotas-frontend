@@ -27,14 +27,9 @@
             <!-- Columna fechaAdop -->
             <ng-container matColumnDef="fechaAdopcion">
                 <th mat-header-cell *matHeaderCellDef> Fecha de adopcion </th>
+                <!--<td mat-cell *matCellDef="let user"> {{user.fechaAdopcion | date:'MM/dd/yyyy' }} </td>-->
                 <td mat-cell *matCellDef="let user"> {{user.fechaAdopcion }} </td>
               </ng-container>
-
-            <!-- Columna  
-            <ng-container matColumnDef="descripcion">
-              <th mat-header-cell *matHeaderCellDef> Caracteristicas de la mascota </th>
-              <td mat-cell *matCellDef="let user"> {{ user.descripcion }} </td>
-            </ng-container>-->
 
             <!-- Columna Editar -->
             <ng-container matColumnDef="editar">

@@ -57,7 +57,7 @@ export class MascotasComponent implements OnInit, OnDestroy {
   onDelete(cveMascota: number) {
     this.dialog.open(DialogoConfirmacionComponent, {
       disableClose: true,
-      data: "Estas seguro de querer eliminarlo"
+      data: "¿Estas seguro de querer eliminarlo?"
     }).beforeClosed()
       .pipe(takeUntil(this.destroy$))
       .subscribe(result => {
